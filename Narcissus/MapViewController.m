@@ -90,11 +90,11 @@
 
 - (void)setupMapWithMajorID:(NSString *)major
 {
-    NSBundle *mapInfoBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"IndoorMap_2" withExtension:@"bundle"]];
+    NSBundle *mapInfoBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"IndoorMap_3" withExtension:@"bundle"]];
     NSDictionary *mapInfo = [NSDictionary dictionaryWithContentsOfURL:[mapInfoBundle URLForResource:@"info" withExtension:@"plist"]];
     _currentMapInfo = mapInfo;
     _navigationBar.topItem.title = [_currentMapInfo objectForKey:@"name"];
-    UIImage *mapImage = [UIImage imageWithContentsOfFile:[mapInfoBundle pathForResource:[mapInfo objectForKey:@"mapName"] ofType:[mapInfo objectForKey:@"mapType"]]];
+    UIImage *mapImage = [UIImage imageWithContentsOfFile:[mapInfoBundle pathForResource:[mapInfo objectForKey:@"mapName"] ofType:@"png"]];
     dispatch_async(dispatch_get_main_queue(), ^{
         [_mapScrollerView setContentSize:mapImage.size];
         _mapView.frame = CGRectMake(0, 0, mapImage.size.width, mapImage.size.height);
@@ -118,7 +118,7 @@
 {
     _IndoorLocationDidUpdated = [[NSNotificationCenter defaultCenter]addObserverForName:@"IndoorLocationDidUpdated" object:nil queue:[[NSOperationQueue alloc]init] usingBlock:^(NSNotification *note) {
         NSDictionary *locationInfo = note.object;
-        NSBundle *mapInfoBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"IndoorMap_2" withExtension:@"bundle"]];
+        NSBundle *mapInfoBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle]URLForResource:@"IndoorMap_3" withExtension:@"bundle"]];
         NSDictionary *mapInfo = [NSDictionary dictionaryWithContentsOfURL:[mapInfoBundle URLForResource:@"info" withExtension:@"plist"]];
         _currentMapInfo = mapInfo;
         if (_currentMapNo) {

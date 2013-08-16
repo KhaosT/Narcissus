@@ -40,7 +40,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     DDLogVerbose(@"didFinishLaunchingWithOptions:%@",launchOptions);
     NSArray *peripheralManagerArray = launchOptions[UIApplicationLaunchOptionsBluetoothPeripheralsKey];
     for (NSString *identify in peripheralManagerArray) {
-        if ([identify isEqualToString:@"Oltica-Identity"]) {
+        if ([identify isEqualToString:@"Oltica-Identity-PM"]) {
             DDLogVerbose(@"FoundIdentity");
         }
     }

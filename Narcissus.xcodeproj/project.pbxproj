@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC02814117BD34EB0062B47D /* IndoorMap_2.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC02814017BD34EB0062B47D /* IndoorMap_2.bundle */; };
+		CC1E070017BE82CC00E349A1 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1E06FF17BE82CC00E349A1 /* MultipeerConnectivity.framework */; };
 		CC26E79517BBF6840015C5A1 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E79417BBF6840015C5A1 /* UserManager.m */; };
 		CC26E79817BBF7E40015C5A1 /* Security.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E79717BBF7E40015C5A1 /* Security.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CC26E79A17BBF7F10015C5A1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC26E79917BBF7F10015C5A1 /* Security.framework */; };
@@ -58,6 +59,7 @@
 		CCDDA47317BAF05500A41DFD /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDA46A17BAF05500A41DFD /* ContextFilterLogFormatter.m */; };
 		CCDDA47417BAF05500A41DFD /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDA46C17BAF05500A41DFD /* DispatchQueueLogFormatter.m */; };
 		CCDDA47517BAF05500A41DFD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CCDDA46D17BAF05500A41DFD /* README.txt */; };
+		CCE3891617BEB96600394DD9 /* IndoorMap_3.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCE3891517BEB96600394DD9 /* IndoorMap_3.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		CC02814017BD34EB0062B47D /* IndoorMap_2.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IndoorMap_2.bundle; sourceTree = "<group>"; };
+		CC1E06FF17BE82CC00E349A1 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		CC26E79317BBF6840015C5A1 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		CC26E79417BBF6840015C5A1 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		CC26E79617BBF7E40015C5A1 /* Security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security.h; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		CCDDA46B17BAF05500A41DFD /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		CCDDA46C17BAF05500A41DFD /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		CCDDA46D17BAF05500A41DFD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		CCE3891517BEB96600394DD9 /* IndoorMap_3.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IndoorMap_3.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1E070017BE82CC00E349A1 /* MultipeerConnectivity.framework in Frameworks */,
 				CC87E29017BDF49B00C12B80 /* MobileCoreServices.framework in Frameworks */,
 				CC87E28E17BDF49600C12B80 /* SystemConfiguration.framework in Frameworks */,
 				CC26E79A17BBF7F10015C5A1 /* Security.framework in Frameworks */,
@@ -249,6 +254,7 @@
 		CCBDC74517BB4A2900EA3B53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CCE3891517BEB96600394DD9 /* IndoorMap_3.bundle */,
 				CC02814017BD34EB0062B47D /* IndoorMap_2.bundle */,
 				CC525A9C17B9A234005FB274 /* IndoorMap_1.bundle */,
 			);
@@ -277,6 +283,7 @@
 		CCD2F8C717B94CBF000A49AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC1E06FF17BE82CC00E349A1 /* MultipeerConnectivity.framework */,
 				CC87E28F17BDF49B00C12B80 /* MobileCoreServices.framework */,
 				CC87E28D17BDF49600C12B80 /* SystemConfiguration.framework */,
 				CC26E79917BBF7F10015C5A1 /* Security.framework */,
@@ -489,6 +496,7 @@
 				CC525A9D17B9A234005FB274 /* IndoorMap_1.bundle in Resources */,
 				CCDDA47517BAF05500A41DFD /* README.txt in Resources */,
 				CC91E00F17BC27CD007D5894 /* SetupViewController.xib in Resources */,
+				CCE3891617BEB96600394DD9 /* IndoorMap_3.bundle in Resources */,
 				CCD2F8D317B94CC0000A49AB /* InfoPlist.strings in Resources */,
 				CC02814117BD34EB0062B47D /* IndoorMap_2.bundle in Resources */,
 			);

@@ -52,6 +52,7 @@
         [_locationManager startUpdatingLocation];
         
         [_locationManager startMonitoringForRegion:_beaconRegion];
+        [_locationManager requestStateForRegion:_beaconRegion];
     }
     return self;
 }
@@ -86,10 +87,10 @@
 {
     if ([region isEqual:_beaconRegion]) {
         NSLog(@"ALCL:%@,%d",region,state);
-        if (state == CLRegionStateInside) {
+        if (state == CLRegionStateInside || state == CLRegionStateUnknown) {
             [_locationManager startRangingBeaconsInRegion:_beaconRegion];
         }
-        if (state == CLRegionStateOutside || state == CLRegionStateUnknown ) {
+        if (state == CLRegionStateOutside) {
             [_locationManager stopMonitoringForRegion:_beaconRegion];
         }
     }
@@ -98,9 +99,10 @@
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     NSLog(@"Range:%@",beacons);
-    _nearbyBeacons = [beacons copy];
+    NSArray *knownBeacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity > %d", CLProximityUnknown]];
+    _nearbyBeacons = [knownBeacons copy];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"DidRangeBeacons" object:nil];
-    CLBeacon *nearestBeacon = [beacons firstObject];
+    CLBeacon *nearestBeacon = [knownBeacons firstObject];
     NSLog(@"Pro:%f",nearestBeacon.accuracy);
     if (![_lastMajor isEqualToNumber:nearestBeacon.major]||![_lastMinor isEqualToNumber:nearestBeacon.minor]) {
         if (![_lastMajor isEqualToNumber:nearestBeacon.major]) {
@@ -111,9 +113,11 @@
             _lastMinor = [nearestBeacon.minor copy];
             NSLog(@"MinorChanged");
         }
-        NSDictionary *locationInfo = @{@"major": _lastMajor,@"minor" : _lastMinor};
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"IndoorLocationDidUpdated" object:locationInfo];
-        [self checkInWithMajor:_lastMajor Minor:_lastMinor];
+        if (_lastMajor && _lastMinor) {
+            NSDictionary *locationInfo = @{@"major": _lastMajor,@"minor" : _lastMinor};
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"IndoorLocationDidUpdated" object:locationInfo];
+            [self checkInWithMajor:_lastMajor Minor:_lastMinor];
+        }
     }
 }
 

@@ -53,7 +53,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         NSData *secretData = [AGBase32 base32Decode:secret];
         _generator = [[AGTotp alloc]initWithSecret:secretData];
 
-        _identityManager = [[CBPeripheralManager alloc]initWithDelegate:self queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) options:@{CBPeripheralManagerOptionRestoreIdentifierKey: @"Oltica-Identity"}];
+        _identityManager = [[CBPeripheralManager alloc]initWithDelegate:self queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) options:@{CBPeripheralManagerOptionRestoreIdentifierKey: @"Oltica-Identity-PM"}];
         DDLogVerbose(@"Init");
     }
     return self;

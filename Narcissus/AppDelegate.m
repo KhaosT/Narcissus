@@ -10,6 +10,7 @@
 #import "IdentityCore.h"
 #import "LocationCore.h"
 #import "UserManager.h"
+#import "Security.h"
 
 #import "DDLog.h"
 #import "DDFileLogger.h"
@@ -46,14 +47,23 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
     if ([[UserManager defaultManager]isAuthed]) {
         [self presentMainUI];
     }else{
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didFinishLogin) name:@"DidLogin" object:nil];
+        //Present Login UI
+        /*[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didFinishLogin) name:@"DidLogin" object:nil];
         self.window.rootViewController = [[SetupViewController alloc]initWithNibName:nil bundle:nil];
-        [self.window makeKeyAndVisible];
+        [self.window makeKeyAndVisible];*/
+        //Demo only
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isLogin"];
+        [[NSUserDefaults standardUserDefaults]setObject:@"7219480F-90F9-4663-8491-0282CE8E8D0E" forKey:@"UUID"];
+        [[NSUserDefaults standardUserDefaults]setObject:@"Zelous" forKey:@"userName"];
+        [[NSUserDefaults standardUserDefaults]setObject:@"http://dl.ti.io/narcissus/zelous_avatar.png" forKey:@"userAvatar"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [Security setName:@"OTPSec" WithContent:@"B2374TNIQ3HKC446"];
+        [[UserManager defaultManager]reinit];
+        [self presentMainUI];
     }
     
     // Override point for customization after application launch.

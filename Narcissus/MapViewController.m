@@ -79,11 +79,11 @@
     [super viewDidLoad];
     [self configureView];
     [_locationFollowUserButton addTarget:self action:@selector(changeLocationFollowMode:) forControlEvents:UIControlEventTouchUpInside];
-    NSDictionary *locationInfo = [[LocationCore defaultCore]currentLocation];
-    if (locationInfo) {
+    //NSDictionary *locationInfo = [[LocationCore defaultCore]currentLocation];
+    /*if (locationInfo) {
         [self setupMapWithMajorID:@"1"];
         [self setUserLocation];
-    }
+    }*/
     
 	// Do any additional setup after loading the view.
 }

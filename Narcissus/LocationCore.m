@@ -73,12 +73,12 @@
 
 - (void)checkInWithMajor:(NSNumber *)major Minor:(NSNumber *)minor
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.oltica.org/v1/narcissus/checkin/%@/%@/%@",[[UserManager defaultManager]userUUID],major,minor]];
+    /*NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"",[[UserManager defaultManager]userUUID],major,minor]];
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
         dispatch_async(dispatch_get_main_queue(), ^{
 
         });
-    }];
+    }];*/
 }
 
 #pragma mark - CLLocationManagerDelegate

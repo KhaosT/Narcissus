@@ -14,6 +14,8 @@
 
 + (UserManager *)defaultManager;
 
+- (void)reinit;
+
 - (void)loginWithID:(NSString *)userID Password:(NSString *)password success:(void (^)(NSDictionary *userInfo))successHandle fail:(void (^)(NSDictionary *error))failHandle;
 
 - (NSString *)userUUID;

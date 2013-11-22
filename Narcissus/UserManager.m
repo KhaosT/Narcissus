@@ -45,9 +45,20 @@
     return self;
 }
 
+- (void)reinit
+{
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isLogin"]) {
+        _isAuthed = YES;
+        _userUUID = [[NSUserDefaults standardUserDefaults]stringForKey:@"UUID"];
+        _userName = [[NSUserDefaults standardUserDefaults]stringForKey:@"userName"];
+        _OTPSec = [Security getContentForName:@"OTPSec"];
+        _userAvatarImageUrl = [[NSUserDefaults standardUserDefaults]stringForKey:@"userAvatar"];
+    }
+}
+
 - (void)loginWithID:(NSString *)userID Password:(NSString *)password success:(void (^)(NSDictionary *userInfo))successHandle fail:(void (^)(NSDictionary *error))failHandle
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.oltica.org/v1/narcissus/login/%@/%@",userID,password]];
+    /*NSURL *url = [NSURL URLWithString:];
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *err) {
         NSDictionary *returnJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         if ([[returnJson objectForKey:@"state"]isEqualToString:@"Success"]) {
@@ -65,7 +76,7 @@
         }else{
             failHandle(returnJson);
         }
-    }];
+    }];*/
 }
 
 - (NSString *)userUUID
@@ -75,7 +86,6 @@
 
 - (NSString *)userOTPSecret
 {
-#warning Read Secret from Keychain
     return _OTPSec;
 }
 

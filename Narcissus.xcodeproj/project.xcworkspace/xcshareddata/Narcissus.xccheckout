@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A9B5FF23-1D4A-43DA-ABC7-F9500C368468</string>
+	<string>CFCC8F6C-0F77-43E4-B366-03BE021E272E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Narcissus</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3BD06966-A89F-43AD-B328-1872D787E509</key>
+		<key>C1D07F88-7822-4E92-BAC4-81219071F615</key>
 		<string>https://github.com/KhaosT/Narcissus.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Narcissus.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3BD06966-A89F-43AD-B328-1872D787E509</key>
+		<key>C1D07F88-7822-4E92-BAC4-81219071F615</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3BD06966-A89F-43AD-B328-1872D787E509</string>
+	<string>C1D07F88-7822-4E92-BAC4-81219071F615</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3BD06966-A89F-43AD-B328-1872D787E509</string>
+			<string>C1D07F88-7822-4E92-BAC4-81219071F615</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Narcissus</string>
 		</dict>

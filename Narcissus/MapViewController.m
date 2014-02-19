@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "LocationCore.h"
+#import "ONALocationCore.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -53,7 +53,7 @@
 
 - (void)configureView
 {
-    _mapScrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44)];
+    _mapScrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     _mapScrollerView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     _mapScrollerView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);
     _mapScrollerView.backgroundColor = [UIColor whiteColor];
@@ -63,15 +63,25 @@
     _mapView = [[UIImageView alloc]initWithFrame:_mapScrollerView.frame];
     [_mapScrollerView addSubview:_mapView];
     _locationFollowUserButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _locationFollowUserButton.frame = CGRectMake(15, [UIScreen mainScreen].bounds.size.height - 90, 28, 28);
+    _locationFollowUserButton.frame = CGRectMake(15, [UIScreen mainScreen].bounds.size.height - 40, 28, 28);
     UIImage *locationButtonImage = [UIImage imageNamed:@"locationfollowUser"];
     [_locationFollowUserButton setImage:[locationButtonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [self.view addSubview:_locationFollowUserButton];
+    UIImage *locationPinImage = [UIImage imageNamed:@"locationPin"];
+    _userPin = [[UIImageView alloc]initWithImage:[locationPinImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    _userPin.hidden = YES;
+    [_mapView addSubview:_userPin];
     _navigationBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44)];
     _navigationBar.delegate = self;
     UINavigationItem *topItem = [[UINavigationItem alloc]initWithTitle:@"Map"];
+    topItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(dismissCurrentView)];
     [_navigationBar setItems:@[topItem]];
     [self.view addSubview:_navigationBar];
+}
+
+- (void)dismissCurrentView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -79,11 +89,11 @@
     [super viewDidLoad];
     [self configureView];
     [_locationFollowUserButton addTarget:self action:@selector(changeLocationFollowMode:) forControlEvents:UIControlEventTouchUpInside];
-    //NSDictionary *locationInfo = [[LocationCore defaultCore]currentLocation];
-    /*if (locationInfo) {
+    NSDictionary *locationInfo = [[ONALocationCore defaultCore]currentLocation];
+    if (locationInfo) {
         [self setupMapWithMajorID:@"1"];
         [self setUserLocation];
-    }*/
+    }
     
 	// Do any additional setup after loading the view.
 }
@@ -162,7 +172,7 @@
 
 - (CGPoint)calculateUserLocation
 {
-    NSArray *nearbyBeacons = [[[LocationCore defaultCore]nearbyBeacons]copy];
+    NSArray *nearbyBeacons = [[ONALocationCore defaultCore]nearbyBeacons];
     /*if (nearbyBeacons.count > 2) {
         CLBeacon *nearestBeacon = [nearbyBeacons objectAtIndex:0];
         CLBeacon *secondBeacon = [nearbyBeacons objectAtIndex:1];
@@ -195,12 +205,10 @@
         CGPoint userCenter = CGPointMake(centerofThreeBeacons.x + (diff.x * fix), centerofThreeBeacons.y + (diff.y * fix));
         
         return userCenter;
-    }else{
-        CLBeacon *nearestBeacon = [nearbyBeacons objectAtIndex:0];
-        CGPoint firstPoint = CGPointMake([[[[_currentMapInfo objectForKey:@"beacons"] objectForKey:[nearestBeacon.minor stringValue]]objectForKey:@"x"] floatValue], [[[[_currentMapInfo objectForKey:@"beacons"] objectForKey:[nearestBeacon.minor stringValue]]objectForKey:@"y"] floatValue]);
-
-        return firstPoint;
     }*/
+    if (nearbyBeacons.count == 0) {
+        return CGPointMake(0, 0);
+    }
     CLBeacon *nearestBeacon = [nearbyBeacons objectAtIndex:0];
     CGPoint firstPoint = CGPointMake([[[[_currentMapInfo objectForKey:@"beacons"] objectForKey:[nearestBeacon.minor stringValue]]objectForKey:@"x"] floatValue], [[[[_currentMapInfo objectForKey:@"beacons"] objectForKey:[nearestBeacon.minor stringValue]]objectForKey:@"y"] floatValue]);
     

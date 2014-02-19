@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCD2F8C417B94CBF000A49AB"
+               BlueprintIdentifier = "CC6AC40F18A9E0170030858D"
                BuildableName = "Narcissus.app"
                BlueprintName = "Narcissus"
                ReferencedContainer = "container:Narcissus.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCD2F8E517B94CC0000A49AB"
+               BlueprintIdentifier = "CC6AC43318A9E0170030858D"
                BuildableName = "NarcissusTests.xctest"
                BlueprintName = "NarcissusTests"
                ReferencedContainer = "container:Narcissus.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD2F8C417B94CBF000A49AB"
+            BlueprintIdentifier = "CC6AC40F18A9E0170030858D"
             BuildableName = "Narcissus.app"
             BlueprintName = "Narcissus"
             ReferencedContainer = "container:Narcissus.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD2F8C417B94CBF000A49AB"
+            BlueprintIdentifier = "CC6AC40F18A9E0170030858D"
             BuildableName = "Narcissus.app"
             BlueprintName = "Narcissus"
             ReferencedContainer = "container:Narcissus.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD2F8C417B94CBF000A49AB"
+            BlueprintIdentifier = "CC6AC40F18A9E0170030858D"
             BuildableName = "Narcissus.app"
             BlueprintName = "Narcissus"
             ReferencedContainer = "container:Narcissus.xcodeproj">

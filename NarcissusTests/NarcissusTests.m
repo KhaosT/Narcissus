@@ -2,8 +2,8 @@
 //  NarcissusTests.m
 //  NarcissusTests
 //
-//  Created by Khaos Tian on 8/12/13.
-//  Copyright (c) 2013 Oltica. All rights reserved.
+//  Created by Khaos Tian on 2/10/14.
+//  Copyright (c) 2014 Oltica. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
@@ -28,7 +28,7 @@
 
 - (void)testExample
 {
-    XCTAssertTrue(1 + 1 == 2);
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

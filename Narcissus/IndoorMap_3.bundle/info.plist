@@ -7,11 +7,11 @@
 	<key>mapType</key>
 	<string>pdf</string>
 	<key>mapSizeX</key>
-	<integer>500</integer>
+	<integer>1650</integer>
 	<key>mapSizeY</key>
-	<integer>500</integer>
+	<integer>1121</integer>
 	<key>name</key>
-	<string>Garge I</string>
+	<string>First Floor</string>
 	<key>major</key>
 	<integer>1</integer>
 	<key>beacons</key>
@@ -19,90 +19,90 @@
 		<key>1</key>
 		<dict>
 			<key>x</key>
-			<real>44.5</real>
+			<integer>400</integer>
 			<key>y</key>
-			<real>74.5</real>
+			<integer>300</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>2</key>
 		<dict>
 			<key>x</key>
-			<real>226.5</real>
+			<integer>800</integer>
 			<key>y</key>
-			<real>74.5</real>
+			<integer>300</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>3</key>
 		<dict>
 			<key>x</key>
-			<real>431.5</real>
+			<integer>1200</integer>
 			<key>y</key>
-			<real>74.5</real>
+			<integer>300</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>4</key>
 		<dict>
 			<key>x</key>
-			<real>40.5</real>
+			<integer>400</integer>
 			<key>y</key>
-			<real>230.5</real>
+			<integer>600</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>5</key>
 		<dict>
 			<key>x</key>
-			<real>222.5</real>
+			<integer>800</integer>
 			<key>y</key>
-			<real>226.5</real>
+			<integer>600</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>6</key>
 		<dict>
 			<key>x</key>
-			<real>427.5</real>
+			<integer>1200</integer>
 			<key>y</key>
-			<real>226.5</real>
+			<integer>600</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>7</key>
 		<dict>
 			<key>x</key>
-			<real>40.5</real>
+			<integer>400</integer>
 			<key>y</key>
-			<real>400.5</real>
+			<integer>900</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>8</key>
 		<dict>
 			<key>x</key>
-			<real>222.5</real>
+			<integer>800</integer>
 			<key>y</key>
-			<real>396.5</real>
+			<integer>900</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>9</key>
 		<dict>
 			<key>x</key>
-			<real>427.5</real>
+			<integer>1200</integer>
 			<key>y</key>
-			<real>396.5</real>
+			<integer>900</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
 		<key>0</key>
 		<dict>
 			<key>x</key>
-			<real>222.5</real>
+			<integer>750</integer>
 			<key>y</key>
-			<real>226.5</real>
+			<integer>750</integer>
 			<key>range</key>
 			<integer>3</integer>
 		</dict>
